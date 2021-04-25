@@ -8,6 +8,8 @@ theme = "hugo"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
+canonifyURLs = true
+
 [params]
   editURL = "https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/"
   description = "Personal Website"
