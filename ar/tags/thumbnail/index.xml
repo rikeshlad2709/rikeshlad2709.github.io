@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>thumbnail on Website of Rikesh Lad</title>
-    <link>rikeshlad2709.github.io/ar/tags/thumbnail/</link>
+    <link>https://rikeshlad2709.github.io/ar/tags/thumbnail/</link>
     <description>Recent content in thumbnail on Website of Rikesh Lad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="rikeshlad2709.github.io/ar/tags/thumbnail/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://rikeshlad2709.github.io/ar/tags/thumbnail/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Guide to Thumbnails in Hugo</title>
-      <link>rikeshlad2709.github.io/ar/arabic/post/image-test/</link>
+      <link>https://rikeshlad2709.github.io/ar/arabic/post/image-test/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>rikeshlad2709.github.io/ar/arabic/post/image-test/</guid>
+      <guid>https://rikeshlad2709.github.io/ar/arabic/post/image-test/</guid>
       <description>Thumbnails can be enabled easily by setting the thumbnail parameter in the frontmatter to an image such as &amp;quot;images/landscape.</description>
     </item>
     
