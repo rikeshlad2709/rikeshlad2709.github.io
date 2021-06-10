@@ -242,21 +242,21 @@
 <tr>
 <td style="text-align:left">Versicolor</td>
 <td style="text-align:right">5</td>
-<td style="text-align:right">0</td>
-<td style="text-align:right">45</td>
+<td style="text-align:right">48</td>
+<td style="text-align:right">2</td>
 </tr>
 <tr>
 <td style="text-align:left">Virginica</td>
 <td style="text-align:right">0</td>
-<td style="text-align:right">0</td>
-<td style="text-align:right">50</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">46</td>
 </tr>
 </tbody>
 </table>
 <h3 id="normalisation">Normalisation</h3>
-<p>It is best to normalise this dataset before applying a clustering algorithm. Variables in this dataset will have naturally different scales which will cause some variables to have heavier weighting in the clustering algorithm. To ensure that all variables are given the same weight in influence.</p>
-<p>There can be some circumstances where normalising is not suitable, such as when dealing with coordinate variables like latitude and longitude.</p>
-<p>In this case I&rsquo;ll being using normalize from the Scikit-Learn library to rescale the variables to unit norm. This will place all variable on a scale between 0 and 1.</p>
+<p>It is best to normalise this dataset before applying a clustering algorithm. Variables in this dataset will have naturally different scales which will cause some variables to have heavier weighting in the clustering algorithm. To ensure that all variables are given a more appropriate weight in influence.</p>
+<p>There can be some circumstances where normalising is not suitable, such as when dealing with coordinate variables like latitude and longitude. Other methods of rescaling variables</p>
+<p>In this case I&rsquo;ll being using normalize from the Scikit-Learn library to rescale the variables to unit norm. This will place all variables on a scale between -1 and 1.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">normalize</span>
 </code></pre></div><h3 id="k-means-clustering">K-Means Clustering</h3>
 <p>In the following python code \(X\) will denote a NumPy matrix array (150, 4) for input variables.</p>
@@ -273,7 +273,7 @@
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Minimum k</span>
 <span class="n">k_start</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="c1"># Maximum k</span>
-<span class="n">k_max</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">k_max</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="c1"># List of all inertia values</span>
 <span class="n">inertia_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">inertia_value</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k_start</span><span class="p">,</span> <span class="n">k_max</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
 </code></pre></div><p>Results can then be plotted.</p>
@@ -294,8 +294,8 @@ $$</p>
         <span class="c1"># Calculate and append distance</span>
         <span class="n">dist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">grad</span> <span class="o">*</span> <span class="p">(</span><span class="n">k_start</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="n">inertia_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">const</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">grad</span> <span class="o">*</span> <span class="n">grad</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
     <span class="c1"># Return k associated with largest distance</span>
-    <span class="k">return</span> <span class="n">k_start</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dists</span><span class="p">)</span>
-</code></pre></div><p>When run on the data, this function selects 3 and the appropriate number of clusters. Interestingly, the selected number of clusters is actually 2 when using a lower maximum. As it&rsquo;s known that there are 3 species in the dataset, it suggests 2 of the flower species have similar characteristics.</p>
+    <span class="k">return</span> <span class="n">k_start</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
+</code></pre></div><p>When run on the data, this function selects 3 and the appropriate number of clusters.</p>
 <h3 id="visualize">Visualize</h3>
 <h4 id="principal-component-analysis">Principal Component Analysis</h4>
 <p>I&rsquo;ll be using principal components to reduce the dimensionailty of the dataset to 2. Principal Component Analysis (PCA) will give vectors that try to preserve the variance in the data. The principal components will be derived using PCA from Scikit-Learn library.</p>
@@ -324,14 +324,14 @@ $$</p>
 <tr>
 <td style="text-align:left">Versicolor</td>
 <td style="text-align:right">5</td>
-<td style="text-align:right">0</td>
-<td style="text-align:right">45</td>
+<td style="text-align:right">48</td>
+<td style="text-align:right">2</td>
 </tr>
 <tr>
 <td style="text-align:left">Virginica</td>
 <td style="text-align:right">0</td>
-<td style="text-align:right">0</td>
-<td style="text-align:right">50</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">46</td>
 </tr>
 </tbody>
 </table>
