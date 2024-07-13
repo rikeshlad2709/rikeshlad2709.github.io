@@ -1,5 +1,12 @@
-[{
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target" : { "namespace": "android_app", "package_name": "com.red_lion.money_sidekick.dev",
-                 "sha256_cert_fingerprints": ["25:CE:B6:AD:CA:16:81:D1:97:13:E4:7D:B7:E0:ED:5C:0C:91:5B:A7:B2:16:0C:4D:AA:D8:4B:EE:0F:85:F4:02"] }
-}]
+[
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "com.red_lion.money_sidekick.dev",
+                    "sha256_cert_fingerprints": ["25:CE:B6:AD:CA:16:81:D1:97:13:E4:7D:B7:E0:ED:5C:0C:91:5B:A7:B2:16:0C:4D:AA:D8:4B:EE:0F:85:F4:02"] }
+    },
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "com.red_lion.money_sidekick",
+                    "sha256_cert_fingerprints": ["25:CE:B6:AD:CA:16:81:D1:97:13:E4:7D:B7:E0:ED:5C:0C:91:5B:A7:B2:16:0C:4D:AA:D8:4B:EE:0F:85:F4:02"] }
+    }
+]
